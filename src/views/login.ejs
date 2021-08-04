@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+.log{
+    margin-left: 450px;
+    margin-top: 130px;
+    background-color: aliceblue;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#ho{
+
+text-decoration: none;
+border: 2px solid black;
+color: rgb(189, 86, 86);
+margin-left: 10px;
+padding-left: 5px;
+padding-right: 5px;
+font-size: 30px;
+background-color: #f1f1f1;
+}
+#ho:hover{
+  background-color: rgb(173, 190, 194);
+}
+
+
+    </style>
+</head>
+<body background="images/boolo.jpg" style="position: absolute;">
+    <a id="ho" href="/">Home</a>
+<form class="log" action="/book" onsubmit="return emailvalidation() && pswvalidation()">
+
+<h2 id="lo"> Log in </h2>
+<br>
+<div>
+<label> Username </label>
+<br>
+
+<input id="louse" type="text" placeholder="signup email id" required>
+
+<label id="louser" for="indicator"></label>
+</div>
+<br>
+<div>
+       <label> Password </label>
+       <br>
+       <input id="psw" type="password" placeholder="Password" required>
+       <label id="pswd" for="indicator"></label>
+</div>
+<br>
+<div>
+<input type="submit" value="submit">
+</div>
+<br>
+<div class="bu">
+    <h5>Need an account ? </h5>
+    
+    <a id="kask"  href="/signup"> Sign up</a>
+</div>
+
+</form>
+    <script>
+
+let emaili = document.getElementById("louse");
+ let emailinn = document.getElementById("louser")
+function emailvalidation(){
+    let emaexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/;
+    if(emaexp.test(emaili.value)){
+      emailinn.innerHTML = "email is valid";
+      
+      return true;
+    }
+    else{
+           emailinn.innerHTML = "email is not valid";
+          
+           return false;
+    }
+}
+let psw = document.getElementById("psw");
+ let pswd = document.getElementById("pswd")
+function pswvalidation(){
+    let passexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if(passexp.test(psw.value)){
+      pswd.innerHTML = "password is valid";
+      
+      return true;
+    }
+    else{
+           pswd.innerHTML = "password is not valid";
+          
+           return false;
+    }
+}
+
+
+    </script>
+
+</body>
+</html>
